@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+        <title>Administrator</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+            <script type="text/javascript" src="../MDB/js/jquery.min.js"></script>
+            <link href="../MDB/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+            <link href="../MDB/css/mdb.min.css" type="text/css" rel="stylesheet" />
+            <link href="../css/style-admin.css" type="text/css" rel="stylesheet" />
+            <!-- Font Awesome JS -->
+            <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+            <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="wrapper">
+			<main id="content">
+				<!-- form add -->
+				<!-- Default form login -->
+				<form class="border border-light p-5" action="" method="POST" enctype="multipart/form-data">
+					<h2 class="btn btn-success mb-4">Upload file sim</h2>
+					<%if(data && data.mes){%>
+					<div class="alert alert-danger"><%=data.mes%></div>
+					<a href="<%=data.path%>">Download</a>
+					<%}%>
+					<ul class="nav nav-tabs md-tabs" id="myTabEx" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active show" id="home-tab-ex" data-toggle="tab" href="#home-ex" role="tab" aria-controls="home-ex" aria-selected="true">Thông tin chung</a>
+						</li>
+					</ul>
+					<div class="tab-content pt-5" id="myTabContentEx">
+						<div class="tab-pane fade active show" id="home-ex" role="tabpanel" aria-labelledby="home-tab-ex">
+						    <div class="form-group">
+                                <div class="row">
+                                    <div class="col-12 col-md-2">
+                                        <label for="gia">Đại lý</label>
+                                    </div>
+                                    <div class="col-12 col-md-10">
+                                        <select name="daily" class="browser-default custom-select">
+                                            <option value="">Chọn đại lý</option>
+                                            <% if(data && data.item ){%>
+                                            <% for(var i=0; i< data.item.length; i++){%>
+                                            <option value="<%=data.item[i].id%>"><%=data.item[i].stt%> <%=data.item[i].ten%></option>
+                                            <%}}%>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+							<div class="form-group">
+								<b class="">File</b>
+								<div class="file-field">
+									<div class="btn btn-primary btn-sm waves-effect waves-light">
+										<input type="file" name="file" id="file">
+									</div>
+								</div>
+							</div>
+							<button class="btn btn-success" type="submit">Hoàn tất</button>
+						</div>
+					</div>
+
+
+				</form>
+				<!-- Default form login -->
+
+				<!-- form add -->
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<%- include('../../layouts/header'); -%>
+<div class="wapper">
+<%- include('../../layouts/left'); -%>
+    <div class="container_mid">
+        <%- include('../../layouts/search'); -%>
+        <div class="noidung">
+            <div class="tieude_giua">
+                <h1>Sim số <%=sim_detail.sim1%></h1><span></span></div>
+            <div class="form_buy">
+                <div class="form_buy2">
+                    <div class="sim_detail_info">
+                        <div class="sim_detail_infol">
+                            <p class="sim_gia">
+                                <span class="label">Số sim:</span>
+                                <span class="price"><%=sim_detail.sim1%></span>
+                            </p>
+                            <p class="sim_gia">
+                                <span class="label">Giá:</span>
+                                <span class="price"><%=sim_detail.gia. toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")%> đ</span>
+                            </p>
+
+                            <p class="sim_nha_mang">
+                                <span class="label">Nhà mạng:</span>
+                                <span class="price"><img src="images/<%=sim_detail.mang%>.gif" alt="<%=sim_detail.sim1%>"></span>
+                            </p>
+                            <p class="sim_gia">
+                                <span class="label">Tình trạng:</span>
+                                <span class="price"><% if(sim_detail.daban==0){ %>  Chưa có chủ sở hữu <% }else{%>Đã bán <% }%></span>
+                            </p>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_buy1">
+                    <form name="form_buy_form" method="post" action="">
+                        <p>
+                            <span class="label">Họ tên (<font>*</font>)</span>
+                            <input name="dh_hoten" id="dh_hoten" type="text" class="form_buy_txt form_buy_name">
+                        </p>
+                        <p>
+                            <span class="label">Điện thoại (<font>*</font>)</span>
+                            <input name="dh_dienthoai" id="dh_dienthoai" type="text" class="form_buy_txt form_buy_phone">
+                        </p>
+                        <p>
+                            <span class="label">Email (<font>*</font>)</span>
+                            <input name="dh_email" id="dh_email" type="text" class="form_buy_txt form_buy_email">
+                        </p>
+                        <p>
+                            <span class="label">Địa chỉ (<font>*</font>)</span>
+                            <input name="dh_diachi" id="dh_diachi" type="text" class="form_buy_txt form_buy_addr">
+                        </p>
+                        <p>
+                            <span class="label">Nội dung</span>
+                            <textarea name="dh_noidung" id="dh_noidung" class="form_buy_txt2"></textarea>
+                        </p>
+                        <p>
+                            <span class="label"></span>
+                            <input type="hidden" name="sim" value="<%=sim_detail.sim2%>">
+                            <input type="button" value="ĐẶT MUA" class="click_mua form_buy_btn form_buy_btn_success">
+                            <input type="button" value="THOÁT" class="form_buy_btn form_buy_btn_danger" onclick="window.history.back();">
+                        </p>
+                    </form>
+                </div>
+                <div class="clear"></div>
+                <div class="box_images_sim">
+                    <img src="images/<%=sim_detail.mang%>_sim.png" alt="<%=sim_detail.sim1%>" class="img-responsive">
+                    <div class="sim sim_<%=sim_detail.mang%>"><%=sim_detail.sim1%></div>
+                    <div class="gia gia_<%=sim_detail.mang%>"><%=sim_detail.gia%> VNĐ</div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="tieude_giua">
+                <div>Mời bạn tham khảo số gần giống đang còn trong kho</div><span></span></div>
+            <div class="showsim">
+                <div class="zz">
+                    <div class="sim_list">
+                        <ul class="sim_list_ul">
+                            <ul class="title">
+                                <li class="li_stt">STT</li>
+                                <li class="li_sim">Số sim</li>
+                                <li class="li_gia">Giá tiền</li>
+                                <li class="li_mang">Mạng</li>
+                                <li class="li_datmua">Đặt mua</li>
+                            </ul>
+                            <div class="xinner-sim-types" data-sql=""></div>
+                            <%for( var i=0; i< product.length; i++ ){%>
+                            <ul class="list list_1">
+                                <li class="li_stt"><%=i+1%></li>
+                                <li class="li_sim"><a href="mua-sim-dep-<%=product[i].sim2%>.html"><%=product[i].sim1%></a></li>
+                                <li class="li_gia"><%=product[i].gia. toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")%></li>
+                                <li class="li_mang"><span><img src="images/<%=product[i].mang%>.gif" alt="<%=product[i].sim2%>"></span></li>
+                                <li class="li_datmua"><a class="btn_mua" href="mua-sim-dep-<%=product[i].sim2%>.html">Đặt mua</a></li>
+                            </ul>
+                            <% } %>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('../../layouts/right'); -%>
+<div class="clear"></div>
+</div>
+<%- include('../../layouts/footer'); -%>

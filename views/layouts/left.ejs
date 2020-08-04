@@ -1,0 +1,79 @@
+<div class="container_left">
+
+    <div class="tieude">Sim theo giá</div>
+    <div id="danhmuc" class="danhmuc">
+        <ul>
+            <% for(var i=0; i<layoutVM.price.length; i++){%>
+            <li><a href="sim-dep-gia-<%=layoutVM.price[i].url%>.html"><%=layoutVM.price[i].ten%></a></li>
+            <% } %>
+            <li><a href="sim-v90-so-dep.html">Sim V90 số đẹp</a></li>
+            <li><a href="sim-c90-so-dep.html">Sim C90 số đẹp</a></li>
+            <li><a href="sim-vd90-so-dep.html">Sim VD90 số đẹp</a></li>
+            <li><a href="sim-tra-sau-vinafone.html">Sim trả sau Vinaphone số đẹp</a></li>
+            <li><a href="sim-tra-sau-viettel.html">Sim trả sau Viettel số đẹp</a></li>
+            <li><a href="sim-tra-sau-mobifone.html">Sim trả sau Mobifone số đẹp</a></li>
+        </ul>
+    </div>
+    <!---END #danhmuc-->
+    <div class="tieude">Sim theo ý nghĩa</div>
+    <div id="danhmuc" class="danhmuc">
+        <ul>
+            <li><a href="sim-so-dep-sim-luc-quy.html">Sim Lục Quý</a></li>
+            <li><a href="sim-so-dep-sim-ngu-quy.html">Sim Ngũ Quý</a></li>
+            <li><a href="sim-so-dep-sim-tu-quy.html">Sim Tứ Quý</a></li>
+            <li><a href="sim-so-dep-sim-tam-hoa.html">Sim Tam Hoa</a></li>
+            <li><a href="sim-so-dep-sim-tam-hoa-kep.html">Sim Tam Hoa Kép</a></li>
+            <li><a href="sim-so-dep-sim-tien-sim-sanh.html">Sim Sảnh Tiến</a></li>
+            <li><a href="sim-so-dep-sim-lap.html">Sim Lặp</a></li>
+            <li><a href="sim-so-dep-sim-taxi.html">Sim Taxi</a></li>
+            <li><a href="sim-so-dep-sim-kep.html">Sim Kép</a></li>
+            <li><a href="sim-so-dep-sim-ngu-quy-giua.html">Ngũ Quý Giữa</a></li>
+            <li><a href="sim-so-dep-sim-loc-phat.html">Sim Lộc Phát</a></li>
+            <li><a href="sim-so-dep-sinh-tai-loc-phat.html">Sinh Tài Lộc Phát</a></li>
+            <li><a href="sim-so-dep-phat-tai-phat-loc.html">Phát Tài Phát Lộc</a></li>
+            <li><a href="sim-so-dep-sim-than-tai.html">Sim Thần Tài</a></li>
+            <li><a href="sim-so-dep-sim-ong-dia.html">Sim Ông Địa</a></li>
+            <li><a href="sim-so-dep-sim-ganh-dao.html">Sim Gánh Đảo</a></li>
+            <li><a href="sim-so-dep-sim-soi-guong.html">Sim Soi Gương</a></li>
+            <li><a href="sim-so-dep-sim-nam-sinh.html">Sim năm sinh</a></li>
+            <li><a href="sim-so-dep-sim-ganh.html">Sim Gánh</a></li>
+            <li><a href="sim-so-dep-sim-san-bang-tat-ca.html">Sim San Bằng Tất Cả</a></li>
+            <li><a href="sim-so-dep-bon-mua-khong-that-bat.html">Bốn Mùa Không Thất</a></li>
+            <li><a href="sim-so-dep-sim-doc-nhat-vo-nhi.html">Sim Độc Nhất Vô Nhị</a></li>
+        </ul>
+    </div>
+    <!---END #danhmuc-->
+    <div class="tieude">Tin tức</div>
+    <div id="danhmuc" class="danhmuc">
+        <ul class="chaytin">
+            <% for(var i=0; i<layoutVM.newsLeft.length; i++){%>
+            <li>
+                <a href="tin-tuc/<%=layoutVM.newsLeft.tenkhongdau%>-<%=layoutVM.newsLeft[i]._id%>.html"><%=layoutVM.newsLeft[i].ten_vi%></a>
+                <div class="clear"></div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <!---END #danhmuc-->
+    <div class="tieude">Sim giá rẻ</div>
+    <div id="danhmuc" class="danhmuc">
+        <% for(var i=0; i<layoutVM.simre.length; i++){%>
+        <div class="simvip">
+            <div class="sim"><a href="mua-sim-dep-<%=layoutVM.simre[i].sim2%>.html"><%=layoutVM.simre[i].sim1%></a></div>
+            <div class="price"><%=layoutVM.simre[i].gia.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")%> đ</div>
+        </div>
+        <% } %>
+    </div>
+    <div class="tieude">Kiến thức về sim</div>
+    <div id="danhmuc" class="danhmuc">
+        <ul class="chaytin">
+            <% for(var i=0; i<layoutVM.kienthuc.length; i++){%>
+            <li>
+                <a href="kien-thuc-sim/<%=layoutVM.kienthuc[i].tenkhongdau%>-<%=layoutVM.kienthuc[i]._id%>.html"><%=layoutVM.kienthuc[i].ten_vi%></a>
+                <div class="clear"></div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <!---END #danhmuc-->
+</div>

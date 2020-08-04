@@ -1,0 +1,98 @@
+<div class="container_right">
+    <div class="tieude">Hotline</div>
+    <div id="danhmuc" class="danhmuc">
+        <%-layoutVM.hotlineLeft.noidung_vi%>
+    </div>
+    <!---END #danhmuc-->
+    <div class="tieude">thông tin tài khoản</div>
+    <div id="danhmuc" class="danhmuc">
+        <ul>
+            <% for(var i=0; i<layoutVM.banking.length; i++){%>
+            <li>
+                <div class="item_banking">
+                    <div class="ten"><%=layoutVM.banking[i].ten%></div>
+                    <div class="items"><%=layoutVM.banking[i].website%></div>
+                    <div class="items">Chủ tài khoản:</div>
+                    <div class="ten"><%=layoutVM.banking[i].chutk%></div>
+                    <div class="items">Số tài khoản</div>
+                    <div class="sotk"><%=layoutVM.banking[i].sotk%></div>
+                </div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <div class="tieude">Sim vip giá gốc</div>
+    <div id="danhmuc" class="danhmuc">
+        <% for(var i=0; i<layoutVM.simvip.length; i++){%>
+        <div class="simvip">
+            <div class="sim"><a><%=layoutVM.simvip[i].sim1%></a></div>
+            <div class="price"><%=layoutVM.simvip[i].gia.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")%> đ</div>
+        </div>
+        <% } %>
+    </div>
+    <div class="tieude">Thông tin nhà mạng</div>
+    <div id="danhmuc" class="danhmuc">
+        <ul class="chaytin">
+            <% for(var i=0; i<layoutVM.kienthuc.length; i++){%>
+            <li>
+                <a href="thong-tin/<%=layoutVM.kienthuc[i].tenkhongdau%>-<%=layoutVM.kienthuc[i]._id%>.html"><%=layoutVM.kienthuc[i].ten_vi%></a>
+                <div class="clear"></div>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <!---END #danhmuc-->
+</div>
+<div class="hidden-md hidden-lg">
+    <div class="group_left_mb">
+        <div class="title">Sim theo giá</div>
+        <ul>
+            <% for(var i=0; i<layoutVM.price.length; i++){%>
+            <li><a href="sim-dep-gia-<%=layoutVM.price[i].url%>.html"><%=layoutVM.price[i].ten%></a></li>
+            <% } %>
+            <li><a href="sim-v90-so-dep.html">Sim V90 số đẹp</a></li>
+            <li><a href="sim-c90-so-dep.html">Sim C90 số đẹp</a></li>
+            <li><a href="sim-vd90-so-dep.html">Sim VD90 số đẹp</a></li>
+            <li><a href="sim-tra-sau-vinafone.html">Sim trả sau Vinaphone số đẹp</a></li>
+            <li><a href="sim-tra-sau-viettel.html">Sim trả sau Viettel số đẹp</a></li>
+            <li><a href="sim-tra-sau-mobifone.html">Sim trả sau Mobifone số đẹp</a></li>
+        </ul>
+    </div>
+    <div class="group_left_mb">
+        <div class="title">Sim theo mạng</div>
+        <ul>
+            <li><a href="so-dep-mobifone.html">Sim Mobifone</a></li>
+            <li><a href="so-dep-viettel.html">Sim Viettel</a></li>
+            <li><a href="so-dep-vinaphone.html">Sim vinaphone</a></li>
+            <li><a href="so-dep-vietnamobile.html">Sim vietnamobile</a></li>
+            <li><a href="so-dep-gmobile.html">Sim gmobile</a></li>
+        </ul>
+    </div>
+    <div class="group_left_mb">
+        <div class="title">Sim theo ý nghĩa</div>
+        <ul>
+            <li><a href="sim-so-dep-sim-luc-quy.html">Sim Lục Quý</a></li>
+            <li><a href="sim-so-dep-sim-ngu-quy.html">Sim Ngũ Quý</a></li>
+            <li><a href="sim-so-dep-sim-tu-quy.html">Sim Tứ Quý</a></li>
+            <li><a href="sim-so-dep-sim-tam-hoa.html">Sim Tam Hoa</a></li>
+            <li><a href="sim-so-dep-sim-tam-hoa-kep.html">Sim Tam Hoa Kép</a></li>
+            <li><a href="sim-so-dep-sim-tien-sim-sanh.html">Sim Sảnh Tiến</a></li>
+            <li><a href="sim-so-dep-sim-lap.html">Sim Lặp</a></li>
+            <li><a href="sim-so-dep-sim-taxi.html">Sim Taxi</a></li>
+            <li><a href="sim-so-dep-sim-kep.html">Sim Kép</a></li>
+            <li><a href="sim-so-dep-sim-ngu-quy-giua.html">Ngũ Quý Giữa</a></li>
+            <li><a href="sim-so-dep-sim-loc-phat.html">Sim Lộc Phát</a></li>
+            <li><a href="sim-so-dep-sinh-tai-loc-phat.html">Sinh Tài Lộc Phát</a></li>
+            <li><a href="sim-so-dep-phat-tai-phat-loc.html">Phát Tài Phát Lộc</a></li>
+            <li><a href="sim-so-dep-sim-than-tai.html">Sim Thần Tài</a></li>
+            <li><a href="sim-so-dep-sim-ong-dia.html">Sim Ông Địa</a></li>
+            <li><a href="sim-so-dep-sim-ganh-dao.html">Sim Gánh Đảo</a></li>
+            <li><a href="sim-so-dep-sim-soi-guong.html">Sim Soi Gương</a></li>
+            <li><a href="sim-so-dep-sim-nam-sinh.html">Sim năm sinh</a></li>
+            <li><a href="sim-so-dep-sim-ganh.html">Sim Gánh</a></li>
+            <li><a href="sim-so-dep-sim-san-bang-tat-ca.html">Sim San Bằng Tất Cả</a></li>
+            <li><a href="sim-so-dep-bon-mua-khong-that-bat.html">Bốn Mùa Không Thất</a></li>
+            <li><a href="sim-so-dep-sim-doc-nhat-vo-nhi.html">Sim Độc Nhất Vô Nhị</a></li>
+        </ul>
+    </div>
+</div>

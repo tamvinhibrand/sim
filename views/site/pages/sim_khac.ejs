@@ -1,0 +1,64 @@
+<%- include('../../layouts/header'); -%>
+<div class="wapper">
+<%- include('../../layouts/left'); -%>
+    <div class="container_mid">
+        <%- include('../../layouts/search'); -%>
+		<div class="noidung">
+			<div class="tieude_giua"><h1><%=title%></h1><span></span></div>
+			<div class="form_buy">
+				<div class="form_buy2">
+					<div class="sim_detail_info">
+					  <div class="sim_detail_infol">
+						<p class="sim_gia">
+								<span class="label">Số sim:</span>
+								<span class="price"><%=sim%></span>    
+						</p>
+						<p class="sim_gia">
+								<span class="label">Giá:</span>
+								<span class="price">Số đã bán hoặc không có</span>
+						</p>
+						 <div class="clear"></div>
+						</div>
+					</div>
+			   </div>
+			</div>
+			 <div class="clear"></div>
+			 <div class="tieude_giua"><div>Tham khảo số gần giống đang còn trong kho</div><span></span></div>
+			<div class="showsim">    	
+				<div class="zz">
+					<div class="sim_list">
+						<ul class="sim_list_ul">
+							<ul class="title">
+								<li class="li_stt">STT</li>
+								<li class="li_sim">Số sim</li>
+								<li class="li_gia">Giá tiền</li>
+								<li class="li_mang">Mạng</li>
+								<li class="li_datmua">Đặt mua</li>
+							</ul>
+							<div class="xinner-sim-types" data-sql=""></div>
+								<%for( var i=0; i< product.length; i++ ){%>
+							<ul class="list list_1">
+								<li class="li_stt"><%=i+1%></li>
+								<li class="li_sim"><a href="mua-sim-dep-<%=product[i].sim2%>.html"><%=product[i].sim1%></a></li>
+								<li class="li_gia"><%=product[i].gia.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")%></li>
+								<li class="li_mang"><span><img src="images/<%=product[i].mang%>.gif" alt="<%=product[i].sim2%>"></span></li>
+								<li class="li_datmua"><a class="btn_mua" href="mua-sim-dep-<%=product[i].sim2%>.html">Đặt mua</a></li>
+							</ul>
+							<% } %>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center">
+				<a class="btn btn-success" style="font-size: 12px;" href="search-*<%=sim.substr(-6)%>.html">
+					Xem tất cả sim đuôi <%=sim.substr(-6)%>		</a>
+				<a class="btn btn-success" style="font-size: 12px;" href="search-<%=sim.substr(-5)%>.html">
+					Xem tất cả sim đuôi <%=sim.substr(-5)%>		</a>
+			</div>
+		</div>
+    </div>
+<%- include('../../layouts/right'); -%>
+<div class="clear"></div>
+</div>
+<%- include('../../layouts/footer'); -%>

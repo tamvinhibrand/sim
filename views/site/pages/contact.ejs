@@ -1,0 +1,33 @@
+<%- include('../../layouts/header'); -%>
+<div class="wapper">
+<%- include('../../layouts/left'); -%>
+    <div class="container_mid">
+        <%- include('../../layouts/search'); -%>
+        <div class="zz">
+            <div class="tieude_giua">Liên hệ</div>
+			<div class="frm_lienhe">
+				<form method="post" name="frm" class="frm" action="lien-he.html">
+					<div class="item_lienhe"><p>Họ và tên:<span>*</span></p><input name="ten_lienhe" type="text" id="ten_lienhe" required /></div>
+					
+					<div class="item_lienhe"><p>Địa chỉ:<span>*</span></p><input name="diachi_lienhe" type="text" id="diachi_lienhe" required /></div>
+					
+					<div class="item_lienhe"><p>Điện thoại:<span>*</span></p><input name="dienthoai_lienhe" type="text" id="dienthoai_lienhe" required /></div>
+					
+					<div class="item_lienhe"><p>Email:<span>*</span></p><input name="email_lienhe" type="text" id="email_lienhe"  required/></div>
+					
+					<div class="item_lienhe"><p>Chủ đề:<span>*</span></p><input name="tieude_lienhe" type="text" id="tieude_lienhe" required /></div>
+					
+					<div class="item_lienhe"><p>Nội dung:<span>*</span></p><textarea name="noidung_lienhe" id="noidung_lienhe" required rows="5"></textarea></div>
+					<div class="item_lienhe" >
+						<p>&nbsp;</p>
+						<input type="submit" value="Gửi" />
+						<input type="button" value="Nhập lại" onclick="document.frm.reset();" />
+					</div>
+				</form>
+			</div><!--.frm_lienhe-->
+        </div>
+    </div>
+<%- include('../../layouts/right'); -%>
+<div class="clear"></div>
+</div>
+<%- include('../../layouts/footer'); -%>

@@ -1,0 +1,107 @@
+<%- include('../../layouts/header'); -%>
+<div class="wapper">
+<%- include('../../layouts/left'); -%>
+    <div class="container_mid">
+        <%- include('../../layouts/search'); -%>
+        <div class="zz">
+            <div class="tt_shows">
+                <h2><p><%=title%></p></h2>
+			</div>
+			<div class="filter">
+				<input type="hidden" id="url_filter" value="<%=fullurl_fill%>" />
+				<div class="item">
+					<div class="title">Đầu số</div>
+					<ul id="filter_mang">
+						<li data-val="all" <% if(filter=="all" || filter=="") {%> class="active" <% } %>>Tất cả đầu số</li>
+						<li data-val="moi" <% if(filter=="moi") {%> class="active" <% } %>>Đầu mới</li>
+						<li data-val="cu" <% if(filter=="cu") {%> class="active" <% } %>>Đầu cũ</li>
+						<div class="close">x</div>
+					</ul>
+				</div>
+				<div class="item">
+					<div class="title">Khoảng giá</div>
+					
+					<ul id="filter_price">
+						<li data-val="0" <% if(price==0) {%> class="active" <% } %>>Tất cả mức giá</li>
+						<li data-val="1" <% if(price==1) {%> class="active" <% } %>>Dưới 1 triệu</li>
+						<li data-val="2" <% if(price==2) {%> class="active" <% } %>>1 đến 3 triệu</li>
+						<li data-val="3" <% if(price==3) {%> class="active" <% } %>>3 đến 5 triệu</li>
+						<li data-val="4" <% if(price==4) {%> class="active" <% } %>>5 đến 10 triệu</li>
+						<li data-val="5" <% if(price==5) {%> class="active" <% } %>>10 đến 20 triệu</li>
+						<li data-val="6" <% if(price==6) {%> class="active" <% } %>>20 đến 50 triệu</li>
+						<li data-val="7" <% if(price==7) {%> class="active" <% } %>>Trên 50 triệu</li>
+						<div class="close">x</div>
+					</ul>
+				</div>
+				<div class="item">
+					<div class="title">Sắp xếp</div>
+					<ul id="filter_sort">
+						<li data-val="0" <% if(sort==0) {%> class="active" <% } %>>Ngẫu nhiên</li>
+						<li data-val="1" <% if(sort==1) {%> class="active" <% } %>>Giá thấp đến cao</li>
+						<li data-val="2" <% if(sort==2) {%> class="active" <% } %>>Giá cao đến thấp</li>
+						<div class="close">x</div>
+					</ul>
+				</div>
+				<div class="item">
+					<div class="clear_filter">Xóa lọc</div>
+				</div>
+			</div>
+            <div class="sim_list">
+                <ul class="sim_list_ul">
+                    <ul class="title">
+                        <li class="li_stt">STT</li>
+                        <li class="li_sim">Số sim</li>
+                        <li class="li_gia">Giá tiền</li>
+                        <li class="li_mang">Mạng</li>
+                        <li class="li_datmua">Đặt mua</li>
+                    </ul>
+                    <div class="xinner-sim-types" data-sql=""></div>
+                        <%for( var i=0; i< product.length; i++ ){%>
+                    <ul class="list list_1">
+                        <li class="li_stt"><%=i+1%></li>
+                        <li class="li_sim"><a href="mua-sim-dep-<%=product[i].sim2%>.html"><%=product[i].sim1%></a></li>
+                        <li class="li_gia"><%=product[i].gia.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")%></li>
+                        <li class="li_mang"><span><img src="images/<%=product[i].mang%>.gif" alt="<%=product[i].sim2%>"></span></li>
+                        <li class="li_datmua"><a class="btn_mua" href="mua-sim-dep-<%=product[i].sim2%>.html">Đặt mua</a></li>
+                    </ul>
+                    <% } %>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="pagination">
+            <% if (pages > 0) { %>
+                <ul class="pages text-center">
+					<% if (Number(current) == 1) { %>
+						<li><a href="<%=fullurl%>&p=1">Trước</a></li>
+					<% } else { %>
+						<li><a href="<%=fullurl%>&p=<%= Number(current) - 1%>">Trước</a></li>
+					<% } %>
+					
+                    <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                    <% if (i !== 1) { %>
+                        <li class="disabled"><a>...</a></li>
+                    <% } %>
+                    <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                        <% if (i == current) { %>
+                            <li class="active"><a><%= i %></a></li>
+                        <% } else { %>
+                            <li><a href="<%=fullurl%>&p=<%= i %>"><%= i %></a></li>
+                        <% } %>
+                        <% if (i == Number(current) + 4 && i < pages) { %>
+                            <li class="disabled"><a>...</a></li>
+                        <% } %>
+                    <% } %>
+					<% if (current == pages) { %>
+						<li><a href="<%=fullurl%>&p=<%=pages%>">Tiếp</a></li>
+					<% } else { %>
+						<li><a href="<%=fullurl%>&p=<%= Number(current) + 1%>">Tiếp</a></li>
+					<% } %>
+                </ul>
+            <% } %>
+            </div>
+        </div>
+    </div>
+<%- include('../../layouts/right'); -%>
+<div class="clear"></div>
+</div>
+<%- include('../../layouts/footer'); -%>

@@ -1,0 +1,73 @@
+<div class="indexz">
+    <div class="timsim">
+        <div class="tt">tìm số đẹp</div>
+        <div class="search_form_top_content">
+            <form name="frm_search" method="get" action="search" enctype="multipart/form-data">
+                <div class="search_form_item search_form_txt">
+                    <div class="input_group">
+                        <input name="keyword" oninvalid="this.setCustomValidity('Nhập số sim bạn cần tìm')" id="keysim" value="" class="search_form_control search_form_control1 price" placeholder="Nhập số sim bạn cần tìm" type="tel">
+                        <div class="search_form_sm font-12">
+                            <input class="search_form_submit" type="submit" value="Tìm sim">
+                        </div>
+                        <div class="search_help">
+                            <div class="search_help_title">
+                                Hướng dẫn tìm kiếm sim
+                            </div>
+                            <div class="search_help_content">
+                                <span class="arrow_box"></span>
+                                <p>
+                                    + Để tìm sim bắt đầu bằng 098, quý khách nhập vào 098*
+                                    <br> + Để tìm sim kết thúc bằng 888, quý khách nhập vào *888
+                                    <br> + Để tìm sim bắt đầu bằng 098 và kết thúc bằng 888, nhập vào 098*888
+                                    <br> + Để tìm sim bên trong có số 888, nhập vào 888
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="content search_more">
+                </div>
+                <div class="clear"></div>
+            </form>
+        </div>
+        <!--<div class="antimkiem">Tìm kiếm nâng cao</div>-->
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="hidden-md search_mobi">
+	<div class="item_s">
+		<a href="so-dep-mobifone.html">
+			<img src="images/mobifone_1.svg" alt="Số đẹp mobifone" /><br />
+			Mobifone
+		</a>
+	</div>
+	<div class="item_s">
+		<a href="so-dep-viettel.html">
+			<img src="images/viettel.svg" alt="Số đẹp viettel" /><br />
+			Viettel
+		</a>
+	</div><div class="item_s">
+		<a href="so-dep-vinaphone.html">
+			<img src="images/vinaphone_1.svg" alt="Số đẹp vinaphone" /><br />
+			Vinaphone
+		</a>
+	</div>
+	<div class="item_s">
+		<a href="so-dep-vietnamobile.html">
+			<img src="images/vietnammobile.svg" alt="Số đẹp vietnammobile" /><br />
+			vietnammobile
+		</a>
+	</div>
+</div>
+<script>
+    $(document).ready(function(){
+        $(".search_form_submit").click(function () {
+            var keysim = $("#keysim").val();
+            $url="search-"+keysim+".html";
+            location.href=$url;
+            return false;
+        });
+    })
+</script>
